@@ -22,3 +22,43 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# chta-space DB設計
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|styring|null: false|
+|nickname|string|null: false|
+### Association
+- has_many :messages
+- has_many :users_groups
+- has_many :groups,  through:  :users_groups
+
+## messagesテーブル
+|Column|Type|Options| 
+|------|----|-------|
+|text|text||
+|img|text||
+|name|string|null: false|
+|group_name|string|null: false|
+### Association
+- be_longs_to :group
+- be_longs_to :user
+
+## groupsテーブル
+|Column|Type|Options| 
+|------|----|-------|
+|group_name|string|null: false|
+### Association
+- has_many :users_groups
+- has_many :users, through: :users_groups
+- has_many :messages
+
+## users_groupsテーブル
+|Column|Type|Options| 
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :group
+- belongs_to :user
