@@ -1,0 +1,53 @@
+.side-bar{
+  width: 300px;
+  color: $main-white;
+  &__top{ 
+    background-color: #253141;
+    height: 100px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    &__name-space{
+      height: 20px;
+      width: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .name-space__left{
+        text-align: center;
+        font-size: 16px;
+      }
+      .name-space__right{
+        text-align: center;
+        font-size: 20px;
+        display: flex;
+        li{        
+          a{
+          color: $main-white;
+          padding-left: 5px;
+          }
+        }
+      }
+    }
+  }
+  &__bottom{
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+    width: 300px;
+    padding: 20px 20px 0;
+    .group{
+      height: 65px;
+      width: 260px;
+      color: $main-white;
+      text-decoration: none;
+      font-weight: bold;
+      .group__name-space{
+        font-size: 15px;
+      }
+      .group__message-space{
+        font-size: 11px;
+      }
+    }
+  }
+}
