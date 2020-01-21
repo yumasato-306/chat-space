@@ -38,16 +38,18 @@
     padding: 20px 20px 0;
     .group{
       height: 65px;
-      width: 260px;
-      color: $main-white;
-      text-decoration: none;
       font-weight: bold;
-      .group__name-space{
+      a{
+        text-decoration: none;
+       .group__name-space{
         font-size: 15px;
+        color: $main-white;
+       }
       }
       .group__message-space{
         font-size: 11px;
+        color: $main-white;
       }
     }
-  }
+  } 
 }

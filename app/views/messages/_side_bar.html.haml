@@ -5,15 +5,17 @@
     = current_user.name
    %ul.name-space__right 
     %li.new-btn
-     =link_to "#", class: "new__btn" do
-      = icon('far','edit')
+     =link_to new_group_path do
+      = icon('far','edit',class: 'icon')
     %li.edit-btn
      = link_to edit_user_path(current_user) do
       = icon('fas', 'cog', class: 'icon')
       
  .side-bar__bottom
-  = link_to "#",class:"group" do
-   %p.group__name-space
-    test
-   %p.group__message-space
-    メッセージがまだありません。
+  - current_user.groups.each do |group|
+   .group
+    = link_to "#" do
+     %p.group__name-space
+      group.name
+     %p.group__message-space
+      メッセージがまだありません。
