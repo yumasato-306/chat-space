@@ -2,14 +2,15 @@
  .side-bar__top
   .side-bar__top__name-space
    %p.name-space__left 
-    名前
+    = current_user.name
    %ul.name-space__right 
     %li.new-btn
      =link_to "#", class: "new__btn" do
       = icon('far','edit')
     %li.edit-btn
-     =link_to "#" , class: "edit__btn" do
-      = icon('fas','cog')
+     = link_to edit_user_path(current_user) do
+      = icon('fas', 'cog', class: 'icon')
+      
  .side-bar__bottom
   = link_to "#",class:"group" do
    %p.group__name-space
