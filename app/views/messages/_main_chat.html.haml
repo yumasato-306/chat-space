@@ -14,12 +14,32 @@
         .main-chat__center__message__top__name 佐藤
         %p.top__day 2020.1.20
       %p.bottom text
-  .main-chat__bottom
-    %form.new-message
-      .input-box
-        %input{type: "text", class: ",input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          = icon('far','image')
-          %input{type: "file", class:"input-box__image__file"}
-      %input{type: "submit", class:"submit-btn", value:"Send"}
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'input-box__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.input-box__image__file :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
+      
+  -# .form
+  -#   = form_for [@group, @message] do |f|
+  -#     = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+  -#     .form__mask
+  -#       = f.label :image, class: 'input-box__image' do
+  -#         = icon('fas', 'image', class: 'icon')
+  -#         = f.input-box__image__file :image, class: 'hidden'
+  -#     = f.submit 'Send', class: 'form__submit'
+
+
+
+
+    -# %form.new-message
+    -#   .input-box
+    -#     %input{type: "text", class: ",input-box__text", placeholder: "type a message"}
+    -#     %label{class: "input-box__image"}
+    -#       = icon('far','image')
+    -#       %input{type: "file", class:"input-box__image__file"}
+    -#   %input{type: "submit", class:"submit-btn", value:"Send"}
   
