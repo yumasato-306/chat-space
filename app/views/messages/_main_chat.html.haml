@@ -1,25 +1,26 @@
 .main-chat
- .main-chat__top
-  .main-chat__top__left
-   .main-chat__top__left__gname グループ名
-   %ul.member
-    Member:
-    %li.name
-    AAA
-  = link_to "#" do
-   .main-chat__top__edit-btn Edit
- .main-chat__center
-  .main-chat__center__message 
-   .main-chat__center__message__top
-    .main-chat__center__message__top__name 佐藤
-    %p.top__day 2020.1.20
-   %p.bottom text
- .main-chat__bottom
-  %form.new-message
-   .input-box
-    %input{type: "text", class: ",input-box__text", placeholder: "type a message"}
-    %label{class: "input-box__image"}
-     = icon('far','image')
-     %input{type: "file", class:"input-box__image__file"}
-   %input{type: "submit", class:"submit-btn", value:"Send"}
+  .main-chat__top
+    .main-chat__top__left
+      .main-chat__top__left__gname グループ名
+      %ul.member
+        Member:
+        %li.name
+          AAA
+    = link_to "#" do
+      .main-chat__top__edit-btn Edit
+  .main-chat__center
+    .main-chat__center__message 
+      .main-chat__center__message__top
+        .main-chat__center__message__top__name 佐藤
+        %p.top__day 2020.1.20
+      %p.bottom 
+  .main-chat__bottom
+    = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+
   

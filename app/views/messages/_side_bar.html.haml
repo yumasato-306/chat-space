@@ -1,21 +1,21 @@
 .side-bar
- .side-bar__top
-  .side-bar__top__name-space
-   %p.name-space__left 
-    = current_user.name
-   %ul.name-space__right 
-    %li.new-btn
-     =link_to new_group_path do
-      = icon('far','edit',class: 'icon')
-    %li.edit-btn
-     = link_to edit_user_path(current_user) do
-      = icon('fas', 'cog', class: 'icon')
+  .side-bar__top
+    .side-bar__top__name-space
+      %p.name-space__left 
+        = current_user.name
+      %ul.name-space__right 
+        %li.new-btn
+          =link_to new_group_path do
+            = icon('far','edit',class: 'icon')
+        %li.edit-btn
+          = link_to edit_user_path(current_user) do
+            = icon('fas', 'cog', class: 'icon')
       
- .side-bar__bottom
-  - current_user.groups.each do |group|
-   .group
-    = link_to "#" do
-     %p.group__name-space
-      group.name
-     %p.group__message-space
-      メッセージがまだありません。
+  .side-bar__bottom
+    - current_user.groups.each do |group|
+      .group
+        = link_to "#" do
+          %p.group__name-space
+            group.name
+          %p.group__message-space
+            メッセージがまだありません。
