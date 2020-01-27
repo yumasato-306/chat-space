@@ -40,6 +40,7 @@
     background-color: #fafafa;
     height: calc(100% - 190px);
     padding: 46px 40px;
+    overflow: scroll;
     &__message{
       padding-bottom: 40px;
       .main-chat__center__message__top{
@@ -55,12 +56,8 @@
         margin-left: 12px;
         }
       }
-    
-      // 　.bottom{
-
-      //   }
-      }
     }
+  }
   
   &__bottom{
     .form{
