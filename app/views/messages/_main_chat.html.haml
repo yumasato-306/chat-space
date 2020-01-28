@@ -15,7 +15,7 @@
     = render @messages
   .main-chat__bottom
     .form
-      = form_for [@group, @message], remote: true do |f|
+      = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
         = f.label :image, class: 'input-box__image' do
           = icon('far', 'image')
