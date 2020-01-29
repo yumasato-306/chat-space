@@ -70,6 +70,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'jquery-rails'
+gem 'fog-aws'
 
 group :test, :development do 
   gem 'capybara'

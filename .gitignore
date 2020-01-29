@@ -15,6 +15,7 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+config/secrets.yml
 
 public/uploads/*
 public/CarrierWave/＊
