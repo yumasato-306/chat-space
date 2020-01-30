@@ -7,6 +7,7 @@
     display: flex;
     justify-content: space-between;
     padding: 0 40px;
+    overflow: scroll;
     &__left{
       font-size: 20px;
       color: #333333;
@@ -42,19 +43,26 @@
     height: calc(100% - 190px);
     padding: 46px 40px;
     overflow: scroll;
-    &__message{
+    .message{
       padding-bottom: 40px;
-      .main-chat__center__message__top{
+      .upper-message{
       display: flex;
       margin-bottom: 10px;
-        .main-chat__center__message__top__name{
-        color: #333333;
-        font-size: 16px;
+        .upper-message__user-name{
+          color: #333333;
+          font-size: 16px;
+          font-weight: bold;
         }
-        .top__day{
-        color: $main-gray;
-
-        margin-left: 12px;
+        .upper-message__date{
+          color: $main-gray;
+          font-size: 12px;
+          margin-left: 10px;
+        }
+      }
+      &__lower-message{
+        .lower-message__content{
+          font-size: 14px;
+          margin-left: 12px;
         }
       }
     }
